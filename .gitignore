@@ -4,8 +4,8 @@ release/
 .DS_Store
 *.txt
 .env
-ts-client/
-vue/
+ts-client/*
+vue/*
 
 
 
