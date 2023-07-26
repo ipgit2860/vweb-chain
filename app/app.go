@@ -779,18 +779,6 @@ func (app *App) registerUpgradeHandlers() {
 		return app.mm.RunMigrations(ctx, app.configurator, fromVM)
 	})
 
-	// upgradeInfo, err := app.UpgradeKeeper.ReadUpgradeInfoFromDisk()
-	// if err != nil {
-	// 	panic(err)
-	// }
-
-	// configure store loader that checks if version == upgradeHeight and applies store upgrades
-	// if upgradeInfo.Name == UpgradeName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
-	// 	storeUpgrades := storetypes.StoreUpgrades{}
-
-	// 	app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
-	// }
-
 }
 
 func (app *App) setupUpgradeStoreLoaders() {
@@ -799,9 +787,7 @@ func (app *App) setupUpgradeStoreLoaders() {
 		panic(err)
 	}
 	if upgradeInfo.Name == UpgradeName && !app.UpgradeKeeper.IsSkipHeight(upgradeInfo.Height) {
-		storeUpgrades := storetypes.StoreUpgrades{
-			// Added: []string{"group"},
-		}
+		storeUpgrades := storetypes.StoreUpgrades{}
 		app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(upgradeInfo.Height, &storeUpgrades))
 	}
 }

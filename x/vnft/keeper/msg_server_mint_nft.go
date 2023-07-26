@@ -158,12 +158,6 @@ func (k msgServer) MintNft(goCtx context.Context, msg *types.MsgMintNft) (*types
 		fmt.Printf("rd: %s %d\n", rd, len(rd.Record))
 		pubKey = rd.PubKey
 
-		// rd.Record[0] = regexp.MustCompile(`[^a-zA-Z0-9 ]+`).ReplaceAllString(rd.Record[0], "")
-
-		// rd.Record[1] = strings.ReplaceAll(rd.Record[1], " ", "")
-		// rd.Record[1] = regexp.MustCompile(`[^a-zA-Z0-9 ]+`).ReplaceAllString(rd.Record[1], "")
-		// rd.Record[1] = strings.ToLower(rd.Record[1])
-
 		if rd.Record[0] == "" {
 			return nil, types.ErrFailedToMarshalData.Wrapf("Unmarshal %s", "error")
 		}
@@ -234,11 +228,6 @@ func (k msgServer) MintNft(goCtx context.Context, msg *types.MsgMintNft) (*types
 			return nil, types.ErrOwnerAddressUsedBefore.Wrapf("Address registered before")
 		}
 
-		// code for superacount to transfer
-		// userAddress, err = sdk.AccAddressFromBech32(superaccount)
-		// if err != nil {
-		// 	return nil, types.ErrFailedToMarshalData.Wrapf("%s", err.Error())
-		// }
 	}
 
 	fmt.Println()
