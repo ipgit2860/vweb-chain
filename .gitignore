@@ -1,0 +1,11 @@
+release/
+.idea/
+.vscode/
+.DS_Store
+*.txt
+.env
+ts-client/
+vue/
+
+
+

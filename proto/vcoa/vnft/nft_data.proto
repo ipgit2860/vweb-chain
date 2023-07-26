@@ -1,0 +1,17 @@
+syntax = "proto3";
+package vcoa.vnft;
+
+import "gogoproto/gogo.proto";
+// import "google/api/annotations.proto";
+// import "cosmos/base/query/v1beta1/pagination.proto";
+import "vcoa/vnft/params.proto";
+
+// this line is used by starport scaffolding # genesis/proto/import
+option go_package = "vcoa/x/vnft/types";
+
+message NftData {
+    bytes metadata = 1 [
+      (gogoproto.nullable) = false,
+      (gogoproto.customtype) = "JsonInput"
+    ];
+}

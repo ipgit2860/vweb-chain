@@ -1,0 +1,12 @@
+syntax = "proto3";
+package vcoa.vnft;
+
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "vcoa/x/vnft/types";
+
+message EventBurnNFT {
+    string class_id = 1;
+    string nft_id = 2;
+    string owner = 3;
+  }

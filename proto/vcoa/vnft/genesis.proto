@@ -1,0 +1,12 @@
+syntax = "proto3";
+package vcoa.vnft;
+
+import "gogoproto/gogo.proto";
+import "vcoa/vnft/params.proto";
+
+option go_package = "vcoa/x/vnft/types";
+
+// GenesisState defines the vnft module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+}
