@@ -129,7 +129,7 @@ import (
 const (
 	AccountAddressPrefix = "cosmos"
 	Name                 = "vcoa"
-	UpgradeName          = "v0.1.0-alpha"
+	UpgradeName          = "v0.1.0-beta"
 )
 
 // this line is used by starport scaffolding # stargate/wasm/app/enabledProposals
