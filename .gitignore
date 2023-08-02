@@ -1,4 +1,4 @@
-release/
+release*/
 .idea/
 .vscode/
 .DS_Store
