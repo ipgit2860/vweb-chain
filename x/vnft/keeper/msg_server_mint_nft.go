@@ -98,9 +98,9 @@ func (k msgServer) MintNft(goCtx context.Context, msg *types.MsgMintNft) (*types
 	fmt.Println("class.Name: ", class.Name)
 	fmt.Println("classMeta.Version: ", classMeta.Version)
 
-	totalSupply := k.nftKeeper.GetTotalSupply(ctx, class.Id)
+	// totalSupply := k.nftKeeper.GetTotalSupply(ctx, class.Id)
 
-	token.Id, err = types.NewNftId(class.Name, classMeta.Version, totalSupply)
+	token.Id, err = types.NewNftId(class.Name, classMeta.Version, token.UriHash, msg.Creator)
 	fmt.Println("token.Id: ", token.Id)
 	if err != nil {
 		return nil, types.ErrFailedToCreateNftId.Wrapf("%s", err.Error())
