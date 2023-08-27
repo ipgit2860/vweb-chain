@@ -1,4 +1,4 @@
-module github.com/ipgit2860/vweb-chain
+module vcoa
 
 go 1.19
 
